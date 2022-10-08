@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite Day 1]" guice-stage="DEVELOPMENT">
+  <parameter name="driverPath" value="C:\Users\lordr\OneDrive\Documents\chromedriver.exe"/>
+  <test thread-count="5" name="BasicAuth(failed)">
+    <classes>
+      <class name="Sprint1.BasicAuth">
+        <methods>
+          <include name="verifyBasicAuth" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Sprint1.BasicAuth -->
+    </classes>
+  </test> <!-- BasicAuth(failed) -->
+</suite> <!-- Failed suite [Suite Day 1] -->
