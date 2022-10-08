@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-07T21:19:49 EDT" name="Suite Day 1" finished-at="2022-10-07T21:19:57 EDT" duration-ms="7868">
+  <suite started-at="2022-10-08T08:35:34 EDT" name="Suite Sprint 1" finished-at="2022-10-08T08:35:37 EDT" duration-ms="2902">
     <groups>
     </groups>
-    <test started-at="2022-10-07T21:19:49 EDT" name="BrokenImages" finished-at="2022-10-07T21:19:57 EDT" duration-ms="7868">
-      <class name="Sprint1.BrokenImages">
-        <test-method signature="verifyBrokenImages(java.lang.String)[pri:0, instance:Sprint1.BrokenImages@306e95ec]" started-at="2022-10-07T21:19:49 EDT" name="verifyBrokenImages" finished-at="2022-10-07T21:19:57 EDT" duration-ms="7829" status="PASS">
+    <test started-at="2022-10-08T08:35:34 EDT" name="ContextMenu" finished-at="2022-10-08T08:35:37 EDT" duration-ms="2902">
+      <class name="Sprint1.ContextMenu">
+        <test-method signature="verifyAddRemoveElements(java.lang.String)[pri:0, instance:Sprint1.ContextMenu@f5acb9d]" started-at="2022-10-08T08:35:34 EDT" name="verifyAddRemoveElements" finished-at="2022-10-08T08:35:37 EDT" duration-ms="2869" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -17,8 +17,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyBrokenImages -->
-      </class> <!-- Sprint1.BrokenImages -->
-    </test> <!-- BrokenImages -->
-  </suite> <!-- Suite Day 1 -->
+        </test-method> <!-- verifyAddRemoveElements -->
+      </class> <!-- Sprint1.ContextMenu -->
+    </test> <!-- ContextMenu -->
+  </suite> <!-- Suite Sprint 1 -->
 </testng-results>
