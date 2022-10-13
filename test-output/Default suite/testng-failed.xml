@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Sprint1.ContextMenu">
+      <class name="Sprint1.DragDrop">
         <methods>
           <include name="verifyAddRemoveElements"/>
         </methods>
-      </class> <!-- Sprint1.ContextMenu -->
+      </class> <!-- Sprint1.DragDrop -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

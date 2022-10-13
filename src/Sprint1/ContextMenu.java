@@ -18,6 +18,7 @@ public class ContextMenu {
 	@Test
 	@Parameters({ "driverPath"})
 	public void verifyAddRemoveElements(String driverPath) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", driverPath);
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();

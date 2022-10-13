@@ -2,13 +2,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite Sprint 1]" guice-stage="DEVELOPMENT">
   <parameter name="driverPath" value="C:\Users\lordr\OneDrive\Documents\chromedriver.exe"/>
-  <test thread-count="5" name="ContextMenu(failed)">
+  <test thread-count="5" name="DragDrop(failed)">
     <classes>
-      <class name="Sprint1.ContextMenu">
+      <class name="Sprint1.DragDrop">
         <methods>
           <include name="verifyAddRemoveElements" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Sprint1.ContextMenu -->
+      </class> <!-- Sprint1.DragDrop -->
     </classes>
-  </test> <!-- ContextMenu(failed) -->
+  </test> <!-- DragDrop(failed) -->
 </suite> <!-- Failed suite [Suite Sprint 1] -->
