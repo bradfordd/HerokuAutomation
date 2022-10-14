@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-12T20:30:32 EDT" name="Suite Sprint 1" finished-at="2022-10-12T20:30:43 EDT" duration-ms="10699">
+  <suite started-at="2022-10-14T18:04:46 EDT" name="Suite Sprint 1" finished-at="2022-10-14T18:05:08 EDT" duration-ms="21688">
     <groups>
     </groups>
-    <test started-at="2022-10-12T20:30:32 EDT" name="DragDrop" finished-at="2022-10-12T20:30:43 EDT" duration-ms="10699">
-      <class name="Sprint1.DragDrop">
-        <test-method signature="verifyAddRemoveElements(java.lang.String)[pri:0, instance:Sprint1.DragDrop@66d3eec0]" started-at="2022-10-12T20:30:32 EDT" name="verifyAddRemoveElements" finished-at="2022-10-12T20:30:43 EDT" duration-ms="10645" status="PASS">
+    <test started-at="2022-10-14T18:04:46 EDT" name="Typos" finished-at="2022-10-14T18:05:08 EDT" duration-ms="21688">
+      <class name="Sprint1.Typos">
+        <test-method signature="checkForTypos(java.lang.String)[pri:0, instance:Sprint1.Typos@66d3eec0]" started-at="2022-10-14T18:04:46 EDT" name="checkForTypos" finished-at="2022-10-14T18:05:08 EDT" duration-ms="21647" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -17,8 +17,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAddRemoveElements -->
-      </class> <!-- Sprint1.DragDrop -->
-    </test> <!-- DragDrop -->
+        </test-method> <!-- checkForTypos -->
+      </class> <!-- Sprint1.Typos -->
+    </test> <!-- Typos -->
   </suite> <!-- Suite Sprint 1 -->
 </testng-results>
