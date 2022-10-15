@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-14T22:48:31 EDT" name="Suite Sprint 1" finished-at="2022-10-14T22:48:48 EDT" duration-ms="17248">
+  <suite started-at="2022-10-15T13:28:21 EDT" name="Suite Sprint 1" finished-at="2022-10-15T13:28:41 EDT" duration-ms="19866">
     <groups>
     </groups>
-    <test started-at="2022-10-14T22:48:31 EDT" name="Input" finished-at="2022-10-14T22:48:48 EDT" duration-ms="17248">
-      <class name="Sprint1.Input">
-        <test-method signature="verifyInputBox(java.lang.String)[pri:0, instance:Sprint1.Input@66d3eec0]" started-at="2022-10-14T22:48:31 EDT" name="verifyInputBox" finished-at="2022-10-14T22:48:48 EDT" duration-ms="17211" status="PASS">
+    <test started-at="2022-10-15T13:28:21 EDT" name="InfiniteScroll" finished-at="2022-10-15T13:28:41 EDT" duration-ms="19866">
+      <class name="Sprint1.InfiniteScroll">
+        <test-method signature="verifyInputBox(java.lang.String)[pri:0, instance:Sprint1.InfiniteScroll@66d3eec0]" started-at="2022-10-15T13:28:21 EDT" name="verifyInputBox" finished-at="2022-10-15T13:28:41 EDT" duration-ms="19829" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyInputBox -->
-      </class> <!-- Sprint1.Input -->
-    </test> <!-- Input -->
+      </class> <!-- Sprint1.InfiniteScroll -->
+    </test> <!-- InfiniteScroll -->
   </suite> <!-- Suite Sprint 1 -->
 </testng-results>
