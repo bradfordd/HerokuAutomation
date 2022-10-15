@@ -40,6 +40,7 @@ public class Input {
 			inputBox.sendKeys(Keys.DOWN);
 			softAssert.assertEquals(inputBox.getAttribute("value"), "-2");
 			inputBox.sendKeys("5");
+			//test
 			softAssert.assertEquals(inputBox.getAttribute("value"), "-25");
 			Thread.sleep(10000);
 			driver.close();
