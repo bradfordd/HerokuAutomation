@@ -2,12 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite Sprint 1">
 <parameter name="driverPath" value="C:\Users\lordr\OneDrive\Documents\chromedriver.exe"/>
+  <test	name="Input">
+  		<classes>
+  		<class name= "Sprint1.Input"/>
+  		</classes>
+  </test>
+  <!--
   <test	name="Typos">
   		<classes>
   		<class name= "Sprint1.Typos"/>
   		</classes>
   </test>
-  <!--
   <test name="DragDrop">
   		<classes>
   		<class name="Sprint1.DragDrop"/>
