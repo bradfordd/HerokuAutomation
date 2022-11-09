@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite Sprint 1">
+<suite name="Amazon testing">
+	<parameter name="driverPath" value="C:\Users\lordr\OneDrive\Documents\chromedriver.exe"/>
+	<test name='Click An Item And Verify ELements'>
+		<classes>
+			<class name= "AmazonTesting.AmazonItem"/>
+		</classes>
+	</test>
+</suite>
+<!--
 <parameter name="driverPath" value="C:\Users\lordr\OneDrive\Documents\chromedriver.exe"/>
   <test	name="InfiniteScroll">
   		<classes>
   		<class name= "Sprint1.InfiniteScroll"/>
   		</classes>
   </test>
-  <!--
+  
   <test	name="Input">
   		<classes>
   		<class name= "Sprint1.Input"/>
@@ -48,5 +56,5 @@
       <class name="Sprint1.AddRemoveElements"/>
       </classes>
   </test>  
-  -->
-</suite> <!-- Suite -->
+</suite> 
+-->

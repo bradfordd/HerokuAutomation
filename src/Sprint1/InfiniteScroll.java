@@ -41,7 +41,6 @@ public class InfiniteScroll {
 			driver.findElement(By.xpath("//h3[contains(text(),'Infinite Scroll')]"));
 			driver.findElement(By.xpath("//body/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]"));
 			WebElement firstParagraph = driver.findElement(By.xpath("//body/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]"));
-			//System.out.println(firstParagraph.getText());
 			Thread.sleep(1000);
 			driver.close();
 		}

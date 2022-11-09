@@ -120,5 +120,11 @@
 	<classpathentry kind="lib" path="C:/Users/lordr/OneDrive/Desktop/lib/reactive-streams-1.0.3.jar"/>
 	<classpathentry kind="lib" path="C:/Users/lordr/OneDrive/Desktop/lib/rxjava-2.2.8.jar"/>
 	<classpathentry kind="lib" path="C:/Users/lordr/OneDrive/Desktop/lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lordr/OneDrive/Documents/restAssuredFiles/commons-lang3-3.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lordr/OneDrive/Documents/restAssuredFiles/groovy-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lordr/OneDrive/Documents/restAssuredFiles/groovy-json-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lordr/OneDrive/Documents/restAssuredFiles/groovy-xml-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lordr/OneDrive/Documents/restAssuredFiles/rest-assured-all-5.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lordr/OneDrive/Documents/restAssuredFiles/tagsoup-1.2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

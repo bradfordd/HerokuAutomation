@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Sprint1.Input">
+      <class name="AmazonTesting.AmazonItem">
         <methods>
-          <include name="verifyInputBox"/>
+          <include name="verifyAddRemoveElements"/>
         </methods>
-      </class> <!-- Sprint1.Input -->
+      </class> <!-- AmazonTesting.AmazonItem -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
