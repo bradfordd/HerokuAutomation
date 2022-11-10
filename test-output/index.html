@@ -131,26 +131,10 @@
                   </a> <!-- verifyAddRemoveElements(C:\Users\lordr\OneDrive\Documents\chromedriver.exe) -->
                   <span class="method-name">verifyAddRemoveElements</span>
                   <span class="parameters">(C:\Users\lordr\OneDrive\Documents\chromedriver.exe)</span>
-                  <div class="stack-trace">org.openqa.selenium.WebDriverException: disconnected: unable to connect to renderer
-  (failed to check if window was closed: disconnected: unable to connect to renderer)
-  (Session info: chrome=107.0.5304.88)
-Build info: version: &apos;4.1.4&apos;, revision: &apos;535d840ee2&apos;
-System info: host: &apos;LAPTOP-PJ7L08O1&apos;, ip: &apos;192.168.0.181&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d4538b72d27ef1a66e3b464e2f9c78e8, close {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.88, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\lordr\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54092}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54092/devtoo..., se:cdpVersion: 107.0.5304.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: d4538b72d27ef1a66e3b464e2f9c78e8
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
-	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:452)
-	at AmazonTesting.AmazonItem.verifyAddRemoveElements(AmazonItem.java:58)
+                  <div class="stack-trace">java.lang.AssertionError: Test Failed: Unexpected CSS class found for searchbarForm after click.
+Expected Class: nav-input nav-searchbar-attribute nav-active
+Found Class: nav-searchbar nav-progressive-attribute nav-active expected [nav-searchbar nav-progressive-att????????????????ribute nav-active] but found [nav-searchbar nav-progressive-attribute nav-active]
+	at AmazonTesting.AmazonItem.verifyAddRemoveElements(AmazonItem.java:42)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 32 stack frames
 </div> <!-- stack-trace -->
@@ -215,12 +199,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyAddRemoveElements')
 data.setCell(0, 2, 'AmazonTesting.AmazonItem')
-data.setCell(0, 3, 10044680);
+data.setCell(0, 3, 7587);
 window.suiteTableData['Amazon_testing']= { tableData: data, tableDiv: 'times-div-Amazon_testing'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 hours</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-Amazon_testing">
               </div> <!-- times-div-Amazon_testing -->
             </div> <!-- times-div -->
@@ -253,6 +237,10 @@ return data;
                 <span class="method-name">verifyAddRemoveElements(C:\Users\lordr\OneDrive\Documents\chromedriver.exe)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">testCleanUp</span>
+                <span class="method-start">7593 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -6,6 +6,7 @@
     <classes>
       <class name="AmazonTesting.AmazonItem">
         <methods>
+          <include name="testCleanUp"/>
           <include name="verifyAddRemoveElements" invocation-numbers="0"/>
         </methods>
       </class> <!-- AmazonTesting.AmazonItem -->

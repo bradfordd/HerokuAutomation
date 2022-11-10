@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-09T12:31:06 EST" name="Amazon testing" finished-at="2022-11-09T15:18:31 EST" duration-ms="10044799">
+  <suite started-at="2022-11-09T18:53:41 EST" name="Amazon testing" finished-at="2022-11-09T18:53:48 EST" duration-ms="7909">
     <groups>
     </groups>
-    <test started-at="2022-11-09T12:31:06 EST" name="Click An Item And Verify ELements" finished-at="2022-11-09T15:18:31 EST" duration-ms="10044799">
+    <test started-at="2022-11-09T18:53:41 EST" name="Click An Item And Verify ELements" finished-at="2022-11-09T18:53:48 EST" duration-ms="7909">
       <class name="AmazonTesting.AmazonItem">
-        <test-method signature="verifyAddRemoveElements(java.lang.String)[pri:0, instance:AmazonTesting.AmazonItem@741a8937]" started-at="2022-11-09T12:31:06 EST" name="verifyAddRemoveElements" finished-at="2022-11-09T15:18:31 EST" duration-ms="10044680" status="FAIL">
+        <test-method signature="verifyAddRemoveElements(java.lang.String)[pri:0, instance:AmazonTesting.AmazonItem@d9345cd]" started-at="2022-11-09T18:53:41 EST" name="verifyAddRemoveElements" finished-at="2022-11-09T18:53:48 EST" duration-ms="7587" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -15,44 +15,22 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[disconnected: unable to connect to renderer
-  (failed to check if window was closed: disconnected: unable to connect to renderer)
-  (Session info: chrome=107.0.5304.88)
-Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'LAPTOP-PJ7L08O1', ip: '192.168.0.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d4538b72d27ef1a66e3b464e2f9c78e8, close {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.88, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\lordr\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54092}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54092/devtoo..., se:cdpVersion: 107.0.5304.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: d4538b72d27ef1a66e3b464e2f9c78e8]]>
+              <![CDATA[Test Failed: Unexpected CSS class found for searchbarForm after click.
+Expected Class: nav-input nav-searchbar-attribute nav-active
+Found Class: nav-searchbar nav-progressive-attribute nav-active expected [nav-searchbar nav-progressive-att????????????????ribute nav-active] but found [nav-searchbar nav-progressive-attribute nav-active]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: unable to connect to renderer
-  (failed to check if window was closed: disconnected: unable to connect to renderer)
-  (Session info: chrome=107.0.5304.88)
-Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'LAPTOP-PJ7L08O1', ip: '192.168.0.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d4538b72d27ef1a66e3b464e2f9c78e8, close {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.88, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\lordr\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54092}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54092/devtoo..., se:cdpVersion: 107.0.5304.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: d4538b72d27ef1a66e3b464e2f9c78e8
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
-at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:452)
-at AmazonTesting.AmazonItem.verifyAddRemoveElements(AmazonItem.java:58)
+              <![CDATA[java.lang.AssertionError: Test Failed: Unexpected CSS class found for searchbarForm after click.
+Expected Class: nav-input nav-searchbar-attribute nav-active
+Found Class: nav-searchbar nav-progressive-attribute nav-active expected [nav-searchbar nav-progressive-att????????????????ribute nav-active] but found [nav-searchbar nav-progressive-attribute nav-active]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at AmazonTesting.AmazonItem.verifyAddRemoveElements(AmazonItem.java:42)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -83,10 +61,14 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAddRemoveElements -->
+        <test-method is-config="true" signature="testCleanUp()[pri:0, instance:AmazonTesting.AmazonItem@d9345cd]" started-at="2022-11-09T18:53:48 EST" name="testCleanUp" finished-at="2022-11-09T18:53:48 EST" duration-ms="266" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCleanUp -->
       </class> <!-- AmazonTesting.AmazonItem -->
     </test> <!-- Click An Item And Verify ELements -->
   </suite> <!-- Amazon testing -->
