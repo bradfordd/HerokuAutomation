@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Nov 09 18:53:41 EST 2022</td>
+<td>Started on:</td><td>Thu Nov 10 12:01:24 EST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>7 seconds (7909 ms)</td>
+<tr><td>Total time:</td><td>10050 seconds (10050922 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,89 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='AmazonTesting.AmazonItem.testCleanUp()'><b>testCleanUp</b><br>Test class: AmazonTesting.AmazonItem</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: disconnected: unable to connect to renderer
+  (failed to check if window was closed: disconnected: unable to connect to renderer)
+  (Session info: chrome=107.0.5304.88)
+Build info: version: &apos;4.1.4&apos;, revision: &apos;535d840ee2&apos;
+System info: host: &apos;LAPTOP-PJ7L08O1&apos;, ip: &apos;192.168.0.181&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4151342e17a36f3b24b31be9bafeb604, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.88, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\lordr\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58584/devtoo..., se:cdpVersion: 107.0.5304.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 4151342e17a36f3b24b31be9bafeb604
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:452)
+	at AmazonTesting.AmazonItem.testCleanUp(AmazonItem.java:75)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1540031691", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1540031691'><pre>org.openqa.selenium.WebDriverException: disconnected: unable to connect to renderer
+  (failed to check if window was closed: disconnected: unable to connect to renderer)
+  (Session info: chrome=107.0.5304.88)
+Build info: version: &apos;4.1.4&apos;, revision: &apos;535d840ee2&apos;
+System info: host: &apos;LAPTOP-PJ7L08O1&apos;, ip: &apos;192.168.0.181&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4151342e17a36f3b24b31be9bafeb604, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.88, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\lordr\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58584/devtoo..., se:cdpVersion: 107.0.5304.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 4151342e17a36f3b24b31be9bafeb604
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:452)
+	at AmazonTesting.AmazonItem.testCleanUp(AmazonItem.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+	at org.testng.TestRunner.afterRun(TestRunner.java:877)
+	at org.testng.TestRunner.run(TestRunner.java:599)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>32</td>
+<td>AmazonTesting.AmazonItem@d9345cd</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,21 +159,18 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='AmazonTesting.AmazonItem.verifyAddRemoveElements()'><b>verifyAddRemoveElements</b><br>Test class: AmazonTesting.AmazonItem<br>Parameters: C:\Users\lordr\OneDrive\Documents\chromedriver.exe</td>
-<td><div><pre>java.lang.AssertionError: Test Failed: Unexpected CSS class found for searchbarForm after click.
-Expected Class: nav-input nav-searchbar-attribute nav-active
-Found Class: nav-searchbar nav-progressive-attribute nav-active expected [nav-searchbar nav-progressive-att????????????????ribute nav-active] but found [nav-searchbar nav-progressive-attribute nav-active]
-	at AmazonTesting.AmazonItem.verifyAddRemoveElements(AmazonItem.java:42)
+<td><div><pre>java.lang.AssertionError: expected [https://www.amazon.com/sspa/click?ie=UTF8&amp;spc=MTo1NDI1OTgwNjM2ODAzNTE3OjE2NjgwOTk2OTI6c3BfYXRmOjIwMDA2NjEyNzcwNzQ5ODo6MDo6&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;url=%2FBburago-Ferrari-488TGB-Diecast-Model%2Fdp%2FB09Y8LR8RQ%2Fref%3Dsr_1_1_sspa%3Fcrid%3D217T16EOZHY3P%26keywords%3D1%253A24%2BDiecast%26qid%3D1668099692%26sprefix%3D1%252Caps%252C230%26sr%3D8-1-spons%26psc%3D1%26smid%3DAR79RHBHNW7BE] but found [https://www.amazon.com/Bburago-Ferrari-488TGB-Diecast-Model/dp/B09Y8LR8RQ/ref=sr_1_1_sspa?crid=217T16EOZHY3P&amp;keywords=1%3A24+Diecast&amp;qid=1668099692&amp;sprefix=1%2Caps%2C230&amp;sr=8-1-spons&amp;psc=1&amp;smid=AR79RHBHNW7BE]
+	at AmazonTesting.AmazonItem.verifyAddRemoveElements(AmazonItem.java:65)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace871989809", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace871989809'><pre>java.lang.AssertionError: Test Failed: Unexpected CSS class found for searchbarForm after click.
-Expected Class: nav-input nav-searchbar-attribute nav-active
-Found Class: nav-searchbar nav-progressive-attribute nav-active expected [nav-searchbar nav-progressive-att????????????????ribute nav-active] but found [nav-searchbar nav-progressive-attribute nav-active]
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace769507769", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace769507769'><pre>java.lang.AssertionError: expected [https://www.amazon.com/sspa/click?ie=UTF8&amp;spc=MTo1NDI1OTgwNjM2ODAzNTE3OjE2NjgwOTk2OTI6c3BfYXRmOjIwMDA2NjEyNzcwNzQ5ODo6MDo6&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;url=%2FBburago-Ferrari-488TGB-Diecast-Model%2Fdp%2FB09Y8LR8RQ%2Fref%3Dsr_1_1_sspa%3Fcrid%3D217T16EOZHY3P%26keywords%3D1%253A24%2BDiecast%26qid%3D1668099692%26sprefix%3D1%252Caps%252C230%26sr%3D8-1-spons%26psc%3D1%26smid%3DAR79RHBHNW7BE] but found [https://www.amazon.com/Bburago-Ferrari-488TGB-Diecast-Model/dp/B09Y8LR8RQ/ref=sr_1_1_sspa?crid=217T16EOZHY3P&amp;keywords=1%3A24+Diecast&amp;qid=1668099692&amp;sprefix=1%2Caps%2C230&amp;sr=8-1-spons&amp;psc=1&amp;smid=AR79RHBHNW7BE]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
 	at org.testng.Assert.assertEquals(Assert.java:122)
 	at org.testng.Assert.assertEquals(Assert.java:629)
-	at AmazonTesting.AmazonItem.verifyAddRemoveElements(AmazonItem.java:42)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at AmazonTesting.AmazonItem.verifyAddRemoveElements(AmazonItem.java:65)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -120,7 +200,7 @@ Found Class: nav-searchbar nav-progressive-attribute nav-active expected [nav-se
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>7</td>
+<td>10018</td>
 <td>AmazonTesting.AmazonItem@d9345cd</td></tr>
 </table><p>
 </body>

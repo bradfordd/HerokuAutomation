@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Amazon testing">
-	<parameter name="driverPath" value="C:\Users\lordr\OneDrive\Documents\chromedriver.exe"/>
+<suite name="Amazon Item Navigation Testing">
+	<parameter name="driverPath" value="C:\chromedriver\chromedriver.exe"/>
 	<test name='Click An Item And Verify ELements'>
 		<classes>
 			<class name= "AmazonTesting.AmazonItem"/>
