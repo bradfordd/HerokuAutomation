@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Amazon_Item_Navigation_Testing" class="navigator-link">
-              <span class="suite-name border-passed">Amazon Item Navigation Testing</span>
+              <span class="suite-name border-failed">Amazon Item Navigation Testing</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Amazon_Item_Navigation_Testing" class="hide-methods failed suite-Amazon_Item_Navigation_Testing"> (hide)</a> <!-- hide-methods failed suite-Amazon_Item_Navigation_Testing -->
+                      <a href="#" panel-name="suite-Amazon_Item_Navigation_Testing" class="show-methods failed suite-Amazon_Item_Navigation_Testing"> (show)</a> <!-- show-methods failed suite-Amazon_Item_Navigation_Testing -->
+                    </span>
+                    <div class="method-list-content failed suite-Amazon_Item_Navigation_Testing">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Amazon_Item_Navigation_Testing" title="AmazonTesting.AmazonItem" class="method navigator-link" hash-for-method="verifyHover(C:\chromedriver\chromedriver.exe)">verifyHover(C:\chromedriver\chromedriver.exe)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Amazon_Item_Navigation_Testing -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -105,6 +119,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Amazon_Item_Navigation_Testing" title="AmazonTesting.AmazonItem" class="method navigator-link" hash-for-method="averifyUserReviewsFunctionality(C:\chromedriver\chromedriver.exe)">averifyUserReviewsFunctionality(C:\chromedriver\chromedriver.exe)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Amazon_Item_Navigation_Testing" title="AmazonTesting.AmazonItem" class="method navigator-link" hash-for-method="verifyItemSearchAndTitle(C:\chromedriver\chromedriver.exe)">verifyItemSearchAndTitle(C:\chromedriver\chromedriver.exe)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Amazon_Item_Navigation_Testing" title="AmazonTesting.AmazonItem" class="method navigator-link" hash-for-method="verifyScrolling(C:\chromedriver\chromedriver.exe)">verifyScrolling(C:\chromedriver\chromedriver.exe)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Amazon_Item_Navigation_Testing -->
@@ -119,6 +143,46 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Amazon_Item_Navigation_Testing" class="panel Amazon_Item_Navigation_Testing">
+          <div class="suite-Amazon_Item_Navigation_Testing-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">AmazonTesting.AmazonItem</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyHover(C:\chromedriver\chromedriver.exe)">
+                  </a> <!-- verifyHover(C:\chromedriver\chromedriver.exe) -->
+                  <span class="method-name">verifyHover</span>
+                  <span class="parameters">(C:\chromedriver\chromedriver.exe)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[@id=&apos;nav-link-accountList-nav-line-1&apos;]&quot;}
+  (Session info: chrome=107.0.5304.107)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fdc767fb58df0277e3a90ccd40081e05, findElement {using=xpath, value=//span[@id=&apos;nav-link-accountList-nav-line-1&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\lordr\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53048}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53048/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: fdc767fb58df0277e3a90ccd40081e05
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at AmazonTesting.AmazonItem.verifyHover(AmazonItem.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Amazon_Item_Navigation_Testing-class-failed -->
           <div class="suite-Amazon_Item_Navigation_Testing-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -130,6 +194,22 @@
                   <a name="averifyUserReviewsFunctionality(C:\chromedriver\chromedriver.exe)">
                   </a> <!-- averifyUserReviewsFunctionality(C:\chromedriver\chromedriver.exe) -->
                   <span class="method-name">averifyUserReviewsFunctionality</span>
+                  <span class="parameters">(C:\chromedriver\chromedriver.exe)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyItemSearchAndTitle(C:\chromedriver\chromedriver.exe)">
+                  </a> <!-- verifyItemSearchAndTitle(C:\chromedriver\chromedriver.exe) -->
+                  <span class="method-name">verifyItemSearchAndTitle</span>
+                  <span class="parameters">(C:\chromedriver\chromedriver.exe)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyScrolling(C:\chromedriver\chromedriver.exe)">
+                  </a> <!-- verifyScrolling(C:\chromedriver\chromedriver.exe) -->
+                  <span class="method-name">verifyScrolling</span>
                   <span class="parameters">(C:\chromedriver\chromedriver.exe)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -146,11 +226,11 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Amazon Item Navigation Testing&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;parameter name=&quot;driverPath&quot; value=&quot;C:\chromedriver\chromedriver.exe&quot;/&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Click An Item And Verify ELements&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Click An Item And Verify Elements&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;AmazonTesting.AmazonItem&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Click An Item And Verify ELements --&gt;
+  &lt;/test&gt; &lt;!-- Click An Item And Verify Elements --&gt;
 &lt;/suite&gt; &lt;!-- Amazon Item Navigation Testing --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -162,7 +242,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Click An Item And Verify ELements (1 class)</span>
+                <span class="test-name">Click An Item And Verify Elements (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -188,16 +268,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'averifyUserReviewsFunctionality')
+data.setCell(0, 1, 'verifyHover')
 data.setCell(0, 2, 'AmazonTesting.AmazonItem')
-data.setCell(0, 3, 11584);
+data.setCell(0, 3, 16990);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyItemSearchAndTitle')
+data.setCell(1, 2, 'AmazonTesting.AmazonItem')
+data.setCell(1, 3, 15016);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'averifyUserReviewsFunctionality')
+data.setCell(2, 2, 'AmazonTesting.AmazonItem')
+data.setCell(2, 3, 13159);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyScrolling')
+data.setCell(3, 2, 'AmazonTesting.AmazonItem')
+data.setCell(3, 3, 4300);
 window.suiteTableData['Amazon_Item_Navigation_Testing']= { tableData: data, tableDiv: 'times-div-Amazon_Item_Navigation_Testing'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 11 seconds</span>
+              <span class="suite-total-time">Total running time: 49 seconds</span>
               <div id="times-div-Amazon_Item_Navigation_Testing">
               </div> <!-- times-div-Amazon_Item_Navigation_Testing -->
             </div> <!-- times-div -->
@@ -228,10 +320,36 @@ return data;
                 <span class="method-name">averifyUserReviewsFunctionality(C:\chromedriver\chromedriver.exe)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
+              <div class="configuration-method after">
                 <span class="method-name">testCleanUp</span>
-                <span class="method-start">11594 ms</span>
-              </div> <!-- configuration-test after -->
+                <span class="method-start">13166 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyHover(C:\chromedriver\chromedriver.exe)</span>
+                <span class="method-start">13472 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">testCleanUp</span>
+                <span class="method-start">30473 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">verifyItemSearchAndTitle(C:\chromedriver\chromedriver.exe)</span>
+                <span class="method-start">46746 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">testCleanUp</span>
+                <span class="method-start">61765 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">verifyScrolling(C:\chromedriver\chromedriver.exe)</span>
+                <span class="method-start">62078 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">testCleanUp</span>
+                <span class="method-start">66379 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

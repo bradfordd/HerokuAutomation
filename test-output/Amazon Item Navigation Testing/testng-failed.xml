@@ -2,14 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Amazon Item Navigation Testing]" guice-stage="DEVELOPMENT">
   <parameter name="driverPath" value="C:\chromedriver\chromedriver.exe"/>
-  <test thread-count="5" name="Click An Item And Verify ELements(failed)">
+  <test thread-count="5" name="Click An Item And Verify Elements(failed)">
     <classes>
       <class name="AmazonTesting.AmazonItem">
         <methods>
+          <include name="verifyHover" invocation-numbers="0"/>
           <include name="testCleanUp"/>
-          <include name="averifyUserReviewsFunctionality" invocation-numbers="0"/>
         </methods>
       </class> <!-- AmazonTesting.AmazonItem -->
     </classes>
-  </test> <!-- Click An Item And Verify ELements(failed) -->
+  </test> <!-- Click An Item And Verify Elements(failed) -->
 </suite> <!-- Failed suite [Amazon Item Navigation Testing] -->

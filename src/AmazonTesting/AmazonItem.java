@@ -20,6 +20,7 @@ import org.testng.asserts.SoftAssert;
 public class AmazonItem {
 	public String baseUrl = "https://www.amazon.com/ref=nav_logo";
 	public WebDriver driver;
+	@Test
 	@Parameters({ "driverPath"})
 	public void verifyHover(String driverPath) throws InterruptedException{
 		System.setProperty("webdriver.chrome.driver", driverPath);
@@ -32,7 +33,9 @@ public class AmazonItem {
 		WebElement accountMenu = driver.findElement(By.xpath("//span[@id='nav-link-accountList-nav-line-1']"));
 		Actions action = new Actions(driver);
 		action.moveToElement(accountMenu).perform();
+		softAssert.assertAll();
 	}
+	@Test
 	@Parameters({ "driverPath"})
 	public void verifyScrolling(String driverPath) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", driverPath);
@@ -47,7 +50,8 @@ public class AmazonItem {
         for (int i = 0; i < 10; i++) {
         	js.executeScript("window.scrollBy(0, 50)", "");
         }
-        Thread.sleep(99999);
+        //Thread.sleep(99999);
+        softAssert.assertAll();
 	}
 	@Parameters({ "driverPath"})
 	@Test
@@ -90,13 +94,18 @@ public class AmazonItem {
 		//body[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/a[1]
 		WebElement ratingDropDownMenu = driver.findElement(By.xpath("//div[@id='a-popover-2']"));
 		List<WebElement> anchorTags = ratingDropDownMenu.findElements(By.tagName("a"));
+		String starRating = anchorTags.get(0).getText();
 		anchorTags.get(0).click();
+		WebElement filter = driver.findElement(By.xpath("//span[@id='reviews-filter-info-segment']"));
+		softAssert.assertTrue(starRating.equals(filter.getText()), "\nTEST FAILED: starRating clicked on does not match filter currently applied.");
+		softAssert.assertAll();
 		//fiveStarRating.click();
-		Thread.sleep(99999999);
+		//Thread.sleep(99999999);
 		////a[contains(text(),'5 star')
 		//action.moveToElement(ratingBar).perform();
 		
 	}
+	@Test
 	@Parameters({ "driverPath"})
 	public void verifyItemSearchAndTitle(String driverPath) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", driverPath);
@@ -141,9 +150,10 @@ public class AmazonItem {
 		WebElement itemPageTitle = driver.findElement(By.xpath("//span[@id='productTitle']"));
 		String itemPageTitleText = itemPageTitle.getText();
 		softAssert.assertEquals(itemPageTitleText, productName, "\nTEST FAILED: PDP Item name doesn't match name of item clicked");
+		softAssert.assertAll();
 	}
 	
-	@AfterTest
+	@AfterMethod
 	public void testCleanUp() {
 		driver.close();
 	}

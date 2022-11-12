@@ -2,59 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Amazon Item Navigation Testing">
 	<parameter name="driverPath" value="C:\chromedriver\chromedriver.exe"/>
-	<test name='Click An Item And Verify ELements'>
+	<test name='Click An Item And Verify Elements'>
 		<classes>
 			<class name= "AmazonTesting.AmazonItem"/>
 		</classes>
 	</test>
 </suite>
-<!--
-<parameter name="driverPath" value="C:\Users\lordr\OneDrive\Documents\chromedriver.exe"/>
-  <test	name="InfiniteScroll">
-  		<classes>
-  		<class name= "Sprint1.InfiniteScroll"/>
-  		</classes>
-  </test>
-  
-  <test	name="Input">
-  		<classes>
-  		<class name= "Sprint1.Input"/>
-  		</classes>
-  </test>
-  <test	name="Typos">
-  		<classes>
-  		<class name= "Sprint1.Typos"/>
-  		</classes>
-  </test>
-  <test name="DragDrop">
-  		<classes>
-  		<class name="Sprint1.DragDrop"/>
-  		</classes>
-  </test>
-  <test name="ContextMenu">
-  		<classes>
-  		<class name="Sprint1.ContextMenu"/>
-  		</classes>
-  </test>
-  <test name="CheckBoxes">
-  		<classes>
-  		<class name="Sprint1.CheckBoxes"/>
-  		</classes>
-  </test>
-  <test name="BrokenImages">
-  		<classes>
-  		<class name="Sprint1.BrokenImages"/>
-  		</classes>
-  </test>
-  <test name="BasicAuth">
-  		<classes>
-  		<class name="Sprint1.BasicAuth"/>
-  		</classes>
-  </test>
-  <test name="AddRemoveElements">
-      <classes>
-      <class name="Sprint1.AddRemoveElements"/>
-      </classes>
-  </test>  
-</suite> 
--->
