@@ -6,7 +6,8 @@
       <class name="AmazonTesting.AmazonItem">
         <methods>
           <include name="testCleanUp"/>
-          <include name="verifyAddRemoveElements"/>
+          <include name="averifyUserReviewsFunctionality"/>
+          <include name="verifyItemSearchAndTitle"/>
         </methods>
       </class> <!-- AmazonTesting.AmazonItem -->
     </classes>

@@ -17,54 +17,31 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import helperClasses.WebElementHelper;
+
 public class AmazonItem {
 	public String baseUrl = "https://www.amazon.com/ref=nav_logo";
 	public WebDriver driver;
+	SoftAssert softAssert = new SoftAssert();
 	@Test
 	@Parameters({ "driverPath"})
-	public void verifyHover(String driverPath) throws InterruptedException{
-		System.setProperty("webdriver.chrome.driver", driverPath);
-		SoftAssert softAssert = new SoftAssert();
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.get(baseUrl);
-		WebElement accountMenu = driver.findElement(By.xpath("//span[@id='nav-link-accountList-nav-line-1']"));
-		Actions action = new Actions(driver);
-		action.moveToElement(accountMenu).perform();
-		softAssert.assertAll();
-	}
-	@Test
-	@Parameters({ "driverPath"})
-	public void verifyScrolling(String driverPath) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", driverPath);
-		SoftAssert softAssert = new SoftAssert();
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.get(baseUrl);
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("window.scrollBy(0, 50)", "");
-        for (int i = 0; i < 10; i++) {
-        	js.executeScript("window.scrollBy(0, 50)", "");
-        }
-        //Thread.sleep(99999);
-        softAssert.assertAll();
-	}
-	@Parameters({ "driverPath"})
-	@Test
 	public void averifyUserReviewsFunctionality(String driverPath) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", driverPath);
-		SoftAssert softAssert = new SoftAssert();
 		driver = new ChromeDriver();
+		WebElementHelper w = new WebElementHelper();
 		driver.manage().window().maximize();
-		//driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get(baseUrl);
-		WebElement searchBar = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-		WebElement searchBarForm = driver.findElement(By.xpath("//form[@id='nav-search-bar-form']"));
+		WebElement searchBar = w.verifyWebElementsPresenceWithXpath("//input[@id='twotabsearchtextbox']", driver);
+		if (searchBar == null) {
+			System.out.print("\nverifyUserReviewsFunctionality Test FAILED: Could not find searchbar WebElement\n");
+			Assert.fail();
+		}
+		WebElement searchBarForm =  w.verifyWebElementsPresenceWithXpath("//form[@id='nav-search-bar-form']", driver);
+		if (searchBarForm == null) {
+			System.out.print("\nverifyUserReviewsFunctionality Test FAILED: Could not find searchBarForm WebElement\n");
+			Assert.fail();
+		}
 		String searchBarFormClass = searchBarForm.getAttribute("class");
 		try {
 			Assert.assertEquals(searchBarFormClass, "nav-searchbar nav-progressive-attribute");
@@ -75,12 +52,12 @@ public class AmazonItem {
 	
 		searchBar.click();
 		searchBarFormClass = searchBarForm.getAttribute("class");
-		Assert.assertEquals(searchBarFormClass, "nav-searchbar nav-progressive-attribute nav-active", "Test Failed: Unexpected CSS class found for searchbarForm after click.\nExpected Class: nav-input nav-searchbar-attribute nav-active\nFound Class: " + searchBarFormClass);
+		softAssert.assertEquals(searchBarFormClass, "nav-searchbar nav-progressive-attribute nav-active", "Test Failed: Unexpected CSS class found for searchbarForm after click.\nExpected Class: nav-input nav-searchbar-attribute nav-active\nFound Class: " + searchBarFormClass);
 		searchBar.sendKeys("1:24 Diecast");
 		String searchBarText = searchBar.getAttribute("value");
-		softAssert.assertTrue(searchBarText.equals("1:24 Diecast"));
 		if (!searchBarText.equals("1:24 Diecast")) {
-			System.out.print("TEST FAILED: \n Unexpected text in search bar. \n Expected: 1:24 Diecast \n Actual: " + searchBarText);
+			System.out.print("\nTEST FAILED: \n Unexpected text in search bar. \n Expected: 1:24 Diecast \n Actual: " + searchBarText + "\n");
+			Assert.fail();
 		}
 		searchBar.sendKeys(Keys.ENTER);
 		WebElement ratingBar = driver.findElement(By.xpath("//body/div[@id='a-page']/div[@id='search']/div[1]/div[1]/div[1]/span[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/span[1]/span[1]/a[1]/i[1]"));
@@ -88,22 +65,29 @@ public class AmazonItem {
         js.executeScript("arguments[0].scrollIntoView();", ratingBar);
         js.executeScript("window.scrollBy(0, 4)", "");
 		Actions action = new Actions(driver);
-		//action.moveToElement(ratingBar).build().perform();
 		ratingBar.click();
-		//5-star ratings xpath
-		//body[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/a[1]
-		WebElement ratingDropDownMenu = driver.findElement(By.xpath("//div[@id='a-popover-2']"));
+		WebElement ratingDropDownMenu = w.verifyWebElementsPresenceWithXpath("//div[@id='a-popover-2']", driver);
+		if (ratingDropDownMenu == null) {
+			System.out.print("\nverifyUserReviewsFunctionality Test FAILED: Could not find ratings drop down menu\n");
+			Assert.fail();
+		}
 		List<WebElement> anchorTags = ratingDropDownMenu.findElements(By.tagName("a"));
+		if (anchorTags.size() == 0) {
+			System.out.print("\nverifyUserReviewsFunctionality Test FAILED: Could not find anchor tags within ratings drop down menu\n");
+			Assert.fail();
+		}
 		String starRating = anchorTags.get(0).getText();
 		anchorTags.get(0).click();
-		WebElement filter = driver.findElement(By.xpath("//span[@id='reviews-filter-info-segment']"));
-		softAssert.assertTrue(starRating.equals(filter.getText()), "\nTEST FAILED: starRating clicked on does not match filter currently applied.");
+		WebElement filter = w.verifyWebElementsPresenceWithXpath("//span[@id='reviews-filter-info-segment']", driver);
+		if (filter == null) {
+			System.out.print("\nverifyUserReviewsFunctionality Test FAILED: rating filter not found\n");
+			Assert.fail();
+		}
+		if (!starRating.equals(filter.getText())) {
+			System.out.print("\nverifyUserReviewsFunctionality Test FAILED: rating filter not found\n");
+			softAssert.fail();
+		}
 		softAssert.assertAll();
-		//fiveStarRating.click();
-		//Thread.sleep(99999999);
-		////a[contains(text(),'5 star')
-		//action.moveToElement(ratingBar).perform();
-		
 	}
 	@Test
 	@Parameters({ "driverPath"})
@@ -111,45 +95,62 @@ public class AmazonItem {
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		SoftAssert softAssert = new SoftAssert();
 		driver = new ChromeDriver();
+		WebElementHelper w = new WebElementHelper();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get(baseUrl);
-		//Search Bar Testing
-		WebElement searchBar = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-		WebElement searchBarForm = driver.findElement(By.xpath("//form[@id='nav-search-bar-form']"));
-		String searchBarFormClass = searchBarForm.getAttribute("class");
-		try {
-			Assert.assertEquals(searchBarFormClass, "nav-searchbar nav-progressive-attribute");
+		WebElement searchBar = w.verifyWebElementsPresenceWithXpath("//input[@id='twotabsearchtextbox']", driver);
+		if (searchBar == null) {
+			System.out.print("\nverifyItemSearchAndTitle-- verifyUserReviewsFunctionality Test FAILED: Could not find searchbar WebElement\n");
+			Assert.fail();
 		}
-		catch (AssertionError e) {
-			System.out.print("Test Failed: Unexpected CSS class found for searchbarForm. \n Expected Class: nav-input nav-searchbar-attribute \n Found Class: " + searchBarFormClass);
+		WebElement searchBarForm = w.verifyWebElementsPresenceWithXpath("//form[@id='nav-search-bar-form']", driver);
+		if (searchBarForm == null) {
+			System.out.print("\nverifyItemSearchAndTitle-- verifyUserReviewsFunctionality -- Test FAILED: Could not find searchbarForm WebElement\n");
+			Assert.fail();
+		}
+		String searchBarFormClass = searchBarForm.getAttribute("class");
+		if (searchBarFormClass == "nav-searchbar nav-progressive-attribute") {
+			System.out.print("\nverifyItemSearchAndTitle-- Test Failed: Unexpected CSS class found for searchbarForm. \n Expected Class: nav-input nav-searchbar-attribute \n Found Class: " + searchBarFormClass + "\n");
+			softAssert.fail();
 		}
 		searchBar.click();
 		searchBarFormClass = searchBarForm.getAttribute("class");
-		Assert.assertEquals(searchBarFormClass, "nav-searchbar nav-progressive-attribute nav-active", "Test Failed: Unexpected CSS class found for searchbarForm after click.\nExpected Class: nav-input nav-searchbar-attribute nav-active\nFound Class: " + searchBarFormClass);
+		if (searchBarFormClass == "nav-searchbar nav-progressive-attribute nav-active") {
+			System.out.print("\n verifyItemSearchAndTitle-- Test Failed: Unexpected CSS class found for searchbarForm after click.\\nExpected Class: nav-input nav-searchbar-attribute nav-active\\nFound Class: " + searchBarFormClass + "\n");
+			softAssert.fail();
+		}
 		searchBar.sendKeys("1:24 Diecast");
 		String searchBarText = searchBar.getAttribute("value");
-		softAssert.assertTrue(searchBarText.equals("1:24 Diecast"));
 		if (!searchBarText.equals("1:24 Diecast")) {
-			System.out.print("TEST FAILED: \n Unexpected text in search bar. \n Expected: 1:24 Diecast \n Actual: " + searchBarText);
+			System.out.print("\nverifyItemSearchAndTitle-- TEST FAILED: \n Unexpected text in search bar. \n Expected: 1:24 Diecast \n Actual: " + searchBarText + "\n");
+			Assert.fail();
 		}
 		searchBar.sendKeys(Keys.ENTER);
 		String strUrl = driver.getCurrentUrl();
-		try {
-			Assert.assertNotEquals(strUrl, "https://www.amazon.com/ref=nav_logo");
+		if (strUrl == "https://www.amazon.com/ref=nav_logo") {
+			System.out.print("\n verifyItemSearchAndTitle-- Test Failed: Could not navigate to new page after sending enter key to search bar.\n");
+			Assert.fail();
 		}
-		catch (AssertionError e) {
-			System.out.print("Test Failed: Could not navigate to new page after sending enter key to search bar.\n");
-			return;
+		WebElement sponsoredEntry = w.verifyWebElementsPresenceWithXpath("//a[@class='a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal']", driver);
+		if (sponsoredEntry == null) {
+			System.out.print("\n verifyItemSearchAndTitle-- Test Failed: Could not find first entry in search.\n");
+			Assert.fail();
 		}
-		//SoftAssert.assertEquals(searchBarText, "1:24 Diecast", "Search Bar text matches text entered.");
-		WebElement sponsoredEntry = driver.findElement(By.xpath("//a[@class='a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal']"));
 		String productName = sponsoredEntry.getText();
 		sponsoredEntry.click();
-		WebElement itemPageTitle = driver.findElement(By.xpath("//span[@id='productTitle']"));
+		WebElement itemPageTitle = w.verifyWebElementsPresenceWithXpath("//span[@id='productTitle']", driver);
+		if (itemPageTitle == null) {
+			System.out.print("\n verifyItemSearchAndTitle-- Test Failed: Could not find productTitle Element.\n");
+			Assert.fail();
+		}
 		String itemPageTitleText = itemPageTitle.getText();
-		softAssert.assertEquals(itemPageTitleText, productName, "\nTEST FAILED: PDP Item name doesn't match name of item clicked");
+		if (itemPageTitleText == productName) {
+			System.out.print("\n verifyItemSearchAndTitle-- TEST FAILED: PDP Item name doesn't match name of item clicked.\n");
+			softAssert.fail();
+		}
+		//softAssert.assertEquals(itemPageTitleText, productName, "\nTEST FAILED: PDP Item name doesn't match name of item clicked");
 		softAssert.assertAll();
 	}
 	
