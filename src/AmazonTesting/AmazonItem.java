@@ -64,7 +64,6 @@ public class AmazonItem {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].scrollIntoView();", ratingBar);
         js.executeScript("window.scrollBy(0, 4)", "");
-		Actions action = new Actions(driver);
 		ratingBar.click();
 		WebElement ratingDropDownMenu = w.verifyWebElementsPresenceWithXpath("//div[@id='a-popover-2']", driver);
 		if (ratingDropDownMenu == null) {

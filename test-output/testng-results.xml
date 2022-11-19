@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-12T19:46:06 EST" name="Amazon Item Navigation Testing" finished-at="2022-11-12T19:46:35 EST" duration-ms="28973">
+  <suite started-at="2022-11-18T22:34:37 EST" name="Amazon Best Seller Items" finished-at="2022-11-18T22:34:42 EST" duration-ms="5026">
     <groups>
     </groups>
-    <test started-at="2022-11-12T19:46:06 EST" name="Click An Item And Verify Elements" finished-at="2022-11-12T19:46:35 EST" duration-ms="28973">
-      <class name="AmazonTesting.AmazonItem">
-        <test-method signature="averifyUserReviewsFunctionality(java.lang.String)[pri:0, instance:AmazonTesting.AmazonItem@6572421]" started-at="2022-11-12T19:46:06 EST" name="averifyUserReviewsFunctionality" finished-at="2022-11-12T19:46:21 EST" duration-ms="14734" status="PASS">
+    <test started-at="2022-11-18T22:34:37 EST" name="Navigate Best Seller Carousel" finished-at="2022-11-18T22:34:42 EST" duration-ms="5026">
+      <class name="AmazonBestSellers.bestSellerCarousel">
+        <test-method is-config="true" signature="testSetup(java.lang.String)[pri:0, instance:AmazonBestSellers.bestSellerCarousel@4ec4f3a0]" started-at="2022-11-18T22:34:37 EST" name="testSetup" finished-at="2022-11-18T22:34:39 EST" duration-ms="1541" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -17,12 +17,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- averifyUserReviewsFunctionality -->
-        <test-method is-config="true" signature="testCleanUp()[pri:0, instance:AmazonTesting.AmazonItem@6572421]" started-at="2022-11-12T19:46:21 EST" name="testCleanUp" finished-at="2022-11-12T19:46:21 EST" duration-ms="270" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCleanUp -->
-        <test-method signature="verifyItemSearchAndTitle(java.lang.String)[pri:0, instance:AmazonTesting.AmazonItem@6572421]" started-at="2022-11-12T19:46:21 EST" name="verifyItemSearchAndTitle" finished-at="2022-11-12T19:46:35 EST" duration-ms="13562" status="PASS">
+        </test-method> <!-- testSetup -->
+        <test-method signature="verifyBestSellerCarousel(java.lang.String)[pri:0, instance:AmazonBestSellers.bestSellerCarousel@4ec4f3a0]" started-at="2022-11-18T22:34:39 EST" name="verifyBestSellerCarousel" finished-at="2022-11-18T22:34:42 EST" duration-ms="3203" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -30,14 +26,52 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.fail(Assert.java:106)
+at AmazonBestSellers.bestSellerCarousel.verifyBestSellerCarousel(bestSellerCarousel.java:50)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyItemSearchAndTitle -->
-        <test-method is-config="true" signature="testCleanUp()[pri:0, instance:AmazonTesting.AmazonItem@6572421]" started-at="2022-11-12T19:46:35 EST" name="testCleanUp" finished-at="2022-11-12T19:46:35 EST" duration-ms="341" status="PASS">
+        </test-method> <!-- verifyBestSellerCarousel -->
+        <test-method is-config="true" signature="testCleanUp()[pri:0, instance:AmazonBestSellers.bestSellerCarousel@4ec4f3a0]" started-at="2022-11-18T22:34:42 EST" name="testCleanUp" finished-at="2022-11-18T22:34:42 EST" duration-ms="254" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCleanUp -->
-      </class> <!-- AmazonTesting.AmazonItem -->
-    </test> <!-- Click An Item And Verify Elements -->
-  </suite> <!-- Amazon Item Navigation Testing -->
+      </class> <!-- AmazonBestSellers.bestSellerCarousel -->
+    </test> <!-- Navigate Best Seller Carousel -->
+  </suite> <!-- Amazon Best Seller Items -->
 </testng-results>
