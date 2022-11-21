@@ -9,9 +9,9 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Amazon Best Seller Items</th></tr>
-<tr><td><a href="#t0">Navigate Best Seller Carousel</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">5,762,956</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Navigate Best Seller Carousel</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">198,360,769</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Amazon Best Seller Items</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Navigate Best Seller Carousel &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">AmazonBestSellers.bestSellerCarousel</td><td><a href="#m0">testCleanUp</a></td><td rowspan="1">1668908573230</td><td rowspan="1">35213</td></tr><tr><th colspan="4">Navigate Best Seller Carousel &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">AmazonBestSellers.bestSellerCarousel</td><td><a href="#m1">verifyBestSellerCarousel</a></td><td rowspan="1">1668902847106</td><td rowspan="1">5726032</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Amazon Best Seller Items</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Navigate Best Seller Carousel &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">AmazonBestSellers.bestSellerCarousel</td><td><a href="#m0">testCleanUp</a></td><td rowspan="1">1669067485861</td><td rowspan="1">33010</td></tr><tr><th colspan="4">Navigate Best Seller Carousel &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">AmazonBestSellers.bestSellerCarousel</td><td><a href="#m1">verifyBestSellerCarousel</a></td><td rowspan="1">1668869160665</td><td rowspan="1">198324608</td></tr></tbody>
 </table>
 <h2>Navigate Best Seller Carousel</h2><h3 id="m0">AmazonBestSellers.bestSellerCarousel#testCleanUp</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.WebDriverException: disconnected: unable to connect to renderer
   (failed to check if window was closed: disconnected: unable to connect to renderer)
@@ -19,9 +19,9 @@
 Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [eb1e1f30b6f35b8bfd7eff5819e32def, close {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\lordr\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:49690}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49690/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: eb1e1f30b6f35b8bfd7eff5819e32def
+Command: [0dd0ee4a42697d8a2deaafa237d49dcb, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\lordr\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53184}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53184/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0dd0ee4a42697d8a2deaafa237d49dcb
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
@@ -32,30 +32,9 @@ Session ID: eb1e1f30b6f35b8bfd7eff5819e32def
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
 	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:432)
-	at AmazonBestSellers.bestSellerCarousel.testCleanUp(bestSellerCarousel.java:104)
+	at AmazonBestSellers.bestSellerCarousel.testCleanUp(bestSellerCarousel.java:77)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">AmazonBestSellers.bestSellerCarousel#verifyBestSellerCarousel</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>C:\chromedriver\chromedriver.exe</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=107.0.5304.107)
-Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [eb1e1f30b6f35b8bfd7eff5819e32def, maximizeCurrentWindow {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\lordr\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:49690}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49690/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: eb1e1f30b6f35b8bfd7eff5819e32def
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:952)
-	at AmazonBestSellers.bestSellerCarousel.verifyBestSellerCarousel(bestSellerCarousel.java:37)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">AmazonBestSellers.bestSellerCarousel#verifyBestSellerCarousel</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>C:\chromedriver\chromedriver.exe</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

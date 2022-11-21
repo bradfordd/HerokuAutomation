@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!--
-<suite name="Amazon Item Navigation Testing">
+<suite name="Amazon Testing">
 	<parameter name="driverPath" value="C:\chromedriver\chromedriver.exe"/>
 	<test name='Click An Item And Verify Elements'>
 		<classes>
 			<class name= "AmazonTesting.AmazonItem"/>
 		</classes>
 	</test>
-</suite>
--->
-<suite name="Amazon Best Seller Items">
 	<parameter name="driverPath" value="C:\chromedriver\chromedriver.exe"/>
 	<test name='Navigate Best Seller Carousel'>
 		<classes>

@@ -27,89 +27,75 @@ public class bestSellerCarousel {
 	public void testSetup(String driverPath) {
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		driver = new ChromeDriver();
-		//driver.manage().deleteAllCookies();
+		driver.manage().deleteAllCookies();
 	}
 	
 	@Test
 	@Parameters({ "driverPath"})
 	public void verifyBestSellerCarousel(String driverPath) throws InterruptedException {
-		//WebElementHelper w = new WebElementHelper();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get(baseUrl);
-		List<WebElement> bestSellerElements = driver.findElements(By.xpath("//*[contains(text(),'Best Sellers')]"));
-		WebElement bestSellerNavElement = null;
-		int i;
-		for (i = 0; i < bestSellerElements.size(); i++) {
-			if (bestSellerElements.get(i).getAttribute("class").contains("nav-a")) {
-				bestSellerNavElement = bestSellerElements.get(i);
-				break;
+		List<WebElement> bestSellerElement = driver.findElements(By.xpath("//div[@id=\"nav-xshop\"]//*[text()=\'Best Sellers\']"));
+		if (bestSellerElement.size() == 0) {
+			System.out.print("\nERROR: Could not find top best seller element of on Amazon homepage.\n");
+			Assert.fail();
+		}
+		bestSellerElement.get(0).click();
+		Thread.sleep(2000);
+		String currUrl = driver.getCurrentUrl();
+		if (!currUrl.equals("https://www.amazon.com/gp/bestsellers/?ref_=nav_cs_bestsellers")) {
+			System.out.print("\nERROR: Incorrect url navigated to upon clicking best sellers nav-bar element\n");
+			Assert.fail();
+		}
+		List<WebElement> carouselElements = driver.findElements(By.xpath("(//*[@class=\"a-begin a-carousel-container a-carousel-display-swap a-carousel-transition-swap p13n-sc-shoveler p13n-carousel-initialized a-carousel-initialized\"])[1]"));
+		if (carouselElements.size() == 0) {
+			System.out.print("\nERROR: Could not find carousel element.\n");
+			Assert.fail();
+		}
+		
+		//System.out.print(carouselElements.get(0).getAttribute("data-a-carousel-options"));
+		
+		List<WebElement> carouselButtons = driver.findElements(By.xpath("(//*[@class=\"a-begin a-carousel-container a-carousel-display-swap a-carousel-transition-swap p13n-sc-shoveler p13n-carousel-initialized a-carousel-initialized\"])[1]//span[@class=\"a-button-inner\"]"));
+		if (carouselButtons.size() != 2) {
+			System.out.print("\nERROR: Could not find proper number of carousel transition elements (2). Found Elements: " + carouselButtons.size() + "\n");
+			Assert.fail();
+		}
+		carouselButtons.get(1).click();
+		Thread.sleep(2000);
+		String firstCarouselXpath = "(//*[@class=\"a-begin a-carousel-container a-carousel-display-swap a-carousel-transition-swap p13n-sc-shoveler p13n-carousel-initialized a-carousel-initialized\"])[1]";
+		String firstCarouselRankingXpath = firstCarouselXpath + "//*[@class=\"zg-bdg-text\"]";
+		List<WebElement> firstCarouselRankings = driver.findElements(By.xpath(firstCarouselRankingXpath));
+		if (firstCarouselRankings.size() == 0) {
+			System.out.print("\nERROR: Could not find carousel ranking");
+			Assert.fail();
+		}
+		String rankingText = "";
+		String expectedRankingText = "";
+		for (int i = 0; i < firstCarouselRankings.size(); i++) {
+			rankingText = firstCarouselRankings.get(i).getText();
+			expectedRankingText = "#" + (i + 1 + firstCarouselRankings.size());
+			if (!rankingText.equals(expectedRankingText)) {
+				System.out.print("\nERROR: Improper ranking Text \n Expected Ranking Text: " + expectedRankingText 
+						+ " Found Raning Text: " + rankingText);
+				softAssert.fail();
 			}
 		}
-		if (i == bestSellerElements.size()) {
-			System.out.print("\nverifyBestSellerCarousel Test FAILED: Could not find Best Seller WebElement in nav-bar\n");
-			Assert.fail();
+		String pageTitleXpath = "//span[@id=\"zg_banner_text\"]";
+		List<WebElement> pageTitle = driver.findElements(By.xpath(pageTitleXpath));
+		if (pageTitle.size() != 1) {
+			System.out.print("\n ERROR: Did not find proper number of page title elements (1). Found Elements: " + pageTitle.size());
+			softAssert.fail();
+		} else {
+			String expectedPageTitleText = "Amazon Best Sellers";
+			String pageTitleText = pageTitle.get(0).getText();
+			if (!pageTitleText.equals(expectedPageTitleText)) {
+				System.out.print("\nERROR: Did not find proper page title. \nExpected Page Title: " + expectedPageTitleText);
+				System.out.print("\nFound Page Title Text: " + pageTitleText + "\n");
+				softAssert.fail();
+			}
 		}
-		bestSellerNavElement.click(); 
-		List<WebElement> carouselElements = driver.findElements(By.xpath("//*[@class=\"a-row a-carousel-controls a-carousel-row a-carousel-has-buttons\"]"));
-		if (carouselElements.size() == 0) {
-			System.out.print("\nverifyBestSellerCarousel Test FAILED: Could not find carousel element within best sellers page\n");
-			Assert.fail();
-		}
-		List<WebElement> carouselRightButton = driver.findElements(By.xpath("//*[@class=\'a-icon a-icon-next\']"));
-		
-		if (carouselRightButton.size() == 0) {
-			System.out.print("\nverifyBestSellerCarousel Test FAILED: Could not find carousel right button within best sellers page\n");
-			Assert.fail();
-		}
-		
-		List<WebElement> carouselPageCountElements = driver.findElements(By.xpath("//*[@class=\"a-carousel-page-max\"]"));
-		if (carouselPageCountElements.size() == 0) {
-			System.out.print("\nverifyBestSellerCarousel Test FAILED: Could not find page count elements that are supposed to go along with carousel\n");
-			Assert.fail();
-		}
-		if (!((carouselElements.size() == carouselRightButton.size()) && (carouselElements.size() == carouselPageCountElements.size()))) {
-			System.out.print("\nverifyBestSellerCarousel Test FAILED: Number of carousels, button sets, and page counters mismatch.\n");
-			System.out.print("\n CarouselElements: " + carouselElements.size() + " Carousel Button Sets: " + carouselRightButton.size());
-			System.err.print(" CarouselPageCountElements: " + carouselPageCountElements.size() + " \n");
-			Assert.fail();
-		}
-		String pageCountText = carouselPageCountElements.get(0).getText();
-		int pageCount = Integer.parseInt(pageCountText);
-		List<WebElement> carouselArrowKeys = driver.findElements(By.xpath("//*[@class='a-button-inner']"));
-		for (i = 0; i < (pageCount - 1); i++) {
-			Thread.sleep(2000);
-			carouselArrowKeys.get(1).click();
-		}
-		List<WebElement> carouselRanks = driver.findElements(By.xpath("//*[@class=\'zg-bdg-text\']"));
-		if (carouselRanks.size() == 0) {
-			System.out.print("\nverifyBestSellerCarousel Test FAILED: Could not find item rank element \n");
-			Assert.fail();
-		}
-		System.out.println("\n" + carouselRanks.size() + "\n");
-		//Xpath for number rank
-		//*[@class='zg-bdg-text']
-		//System.out.print('\n' + pageCountText + '\n');
-		//*[@class="a-carousel-page-count"]
-//		Thread.sleep(2000);
-//		carouselRightButton.get(0).click();
-//		Thread.sleep(2000);
-//		carouselRightButton.get(0).click();
-//		Thread.sleep(2000);
-//		carouselRightButton.get(0).click();
-
-//		WebElement BestSeller = w.verifyWebElementsPresenceWithXpath("//*[contains(text(),'Best Sellers')]", driver);
-//		if (BestSellerNavTab == null) {
-//			System.out.print("\nverifyBestSellerCarousel Test FAILED: Could not find Best Seller WebElement\n");
-//			Assert.fail();
-//		}
-//		if (BestSellerNavTab.getAttribute("class") != "nav-a ") {
-//			System.out.print("\nverifyBestSellerCarousel Test FAILED: Could not find Best Seller WebElement in nav-bar\n");
-//			System.out.print("\nFound WebElement Class: " + BestSellerNavTab.getAttribute("class"));
-//			Assert.fail();
-//		}
-		Thread.sleep(99999999);
-		//*[contains(text(),'Best Sellers')]
+		softAssert.assertAll();
 	}
 	
 	@AfterMethod
